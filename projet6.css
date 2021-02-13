@@ -1,0 +1,39 @@
+    header {
+        width: 100%;
+        background-color: rgb(62, 165, 87);
+        text-align: center;
+    }
+    
+    h1 {
+        color: rgb(0, 0, 0);
+        padding: 20px;
+    }
+    
+    #board {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    td {
+        height: 50px;
+        width: 50px;
+        border: 1px solid blue;
+    }
+    
+    .inaccessible {
+        background-color: grey;
+    }
+    
+    .arm {
+        background-size: cover;
+    }
+    
+    .player {
+        background-size: cover;
+    }
+    
+    .clickable {
+        background-color: rgba(165, 42, 42, .3);
+        cursor: pointer;
+        border: brown 1px solid;
+    }
