@@ -8,11 +8,15 @@ export class Arm {
     }
 
     create() {
-        const cellElement = $("#" + generateRandomNumber(1, 10) + "-" + generateRandomNumber(1, 10));
+        const row = generateRandomNumber(1, 10);
+        const column = generateRandomNumber(1, 10);
+        const cellElement = $("#" + row + "-" + column);
         const canCreateArm = !cellElement.hasClass("inaccessible") && !cellElement.hasClass("arm");
         if (canCreateArm) {
             cellElement.addClass("arm")
             cellElement.css('background-image', "url(" + this.image + ")")
+            this.row = row;
+            this.column = column;
         } else {
             this.create();
         }

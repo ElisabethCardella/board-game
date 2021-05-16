@@ -1,6 +1,10 @@
 import { generateRandomNumber } from './generateRandomNumber.js'
 
 export class Board {
+    constructor() {
+        this.arms = [];
+    }
+
     generate() {
         const numberOfRows = 10;
         const numberOfColums = 10;
@@ -25,5 +29,18 @@ export class Board {
                 cellElement.addClass("inaccessible")
             }
         }
+    }
+
+    addArm(arm) {
+        this.arms.push(arm);
+    }
+
+    removeArm(armToBeRemoved) {
+        this.arms = this.arms.filter((arm) => arm.name !== armToBeRemoved.name)
+    }
+
+    getArm(row, column) {
+        return this.arms.find((arm) => arm.row === row && arm.column === column);
+
     }
 }

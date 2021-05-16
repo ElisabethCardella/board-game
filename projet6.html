@@ -7,18 +7,86 @@
     <link rel="stylesheet" media="screen" type="text/css" title="Exemple" href="projet6.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Jeu de plateau</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
+    <div class="container">
+        <header>
+            <h1>Jeu de plateau - Projet 6</h1>
+        </header>
+        </br>
+        </br>
+        </br>
 
-    <header>
-        <h1>Jeu de plateau - Projet 6</h1>
-    </header>
+        <div class="container">
+            <div class="row">
+                <table class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="board"></table>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="rightBoard">
+                    <p id="vieEtArm"> Vies et armes </p>
 
-    <table id="board"></table>
+                    <ul>
+                        <h3>Wonder Woman</h3>
+                        <div class="row player1" id="rightBoardPlayer1">
+                            <div class="col-lg-6 col-md-10 col-sm-6 col-xs-6">
+                                <img class=img-responsive src="images/player1.jpg"></div>
+                            <div class="col-lg-6 col-md-10 col-sm-6 col-xs-6">
+                                <img class=img-responsive id="WonderwomanArmImage"></div>
+                            <div class="col-lg-6 col-md-10 col-sm-6 col-xs-6">
+                                Points :
+                                </br> <span id="WonderwomanPoints"></span>
+                            </div>
+                        </div>
+
+                        </br>
+                        </br>
+                        </br>
+
+                        <h3>Wonder Man</h3>
+                        <div class="row player2" id="rightBoardPlayer2">
+
+                            <div class="col-lg-6 col-md-10 col-sm-6 col-xs-6">
+                                <img class=img-responsive src="images/player2.png"></div>
+                            <div class="col-lg-6 col-md-10 col-sm-6 col-xs-6">
+                                <img class=img-responsive id="WondermanArmImage"></div>
+
+                            <div class="col-lg-6 col-md-10 col-sm-6 col-xs-6">
+                                Points :
+                                </br> <span id="WondermanPoints"></span>
+                            </div>
+                    </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            </br>
+            </br>
+            </br>
+
+            <!-- Trigger/Open The Modal -->
+            <button id="myBtn">Ouvrir le modal</button>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
 
 
-    <script type="module" src="projet6.js"></script>
+                <div class="modal-content">
+                    <div id="actualPlayer"> Tour du joueur : </div>
+                    </br>
+                    <button id="attackbutton" class="attack" type="button"> Attaquer </button>
+                    <button id="defensebutton" class="defense" type="button"> Se défendre </button>
+
+                </div>
+
+            </div>
+            <script type="module" src="projet6.js"></script>
+            <script src="Player.js"></script>
+
 </body>
 
 </html>

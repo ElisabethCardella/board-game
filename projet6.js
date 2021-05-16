@@ -7,23 +7,25 @@ $(document).ready(function() {
     board.generate();
     board.generateObstacles();
 
+    const pistolet = new Arm("pistolet", 10, 'images/pistolet.png');
+    board.addArm(pistolet);
 
-    const pistolet = new Arm("pistolet", 20, 'images/pistolet.png');
-    pistolet.create();
+    const bombe = new Arm("bombe", 10, 'images/bombe.jpg')
+    board.addArm(bombe);
 
-    const bombe = new Arm("bombe", 30, 'images/bombe.jpg')
-    bombe.create();
-
-    const mitraillette = new Arm("mitraillette", 50, "images/mitraillette.jpg")
+    const mitraillette = new Arm("mitraillette", 40, "images/mitraillette.jpg")
     mitraillette.create();
+    board.addArm(mitraillette);
 
-    const couteau = new Arm("couteau", 10, "images/couteau.jpg")
+    const couteau = new Arm("couteau", 30, "images/couteau.jpg")
     couteau.create();
+    board.addArm(couteau);
 
-    const player1 = new Player("player1", 100, "images/player1.jpg");
+
+    const player1 = new Player("Wonderwoman", 100, "images/player1.jpg", pistolet, board);
     player1.create(1, 3);
 
-    const player2 = new Player("player2", 100, "images/player2.png");
+    const player2 = new Player("Wonderman", 100, "images/player2.png", bombe, board);
     player2.create(7, 10);
 
     player1.setOtherPlayer(player2);
@@ -31,4 +33,19 @@ $(document).ready(function() {
     player2.setOtherPlayer(player1);
 
     player1.beginTurn();
+
+    player1.tryToAttack();
+
+    var imgPlayer1 = document.getElementById("WonderwomanArmImage");
+    imgPlayer1.src = player1.arm.image;
+
+    var imgPlayer2 = document.getElementById("WondermanArmImage");
+    imgPlayer2.src = player2.arm.image;
+
+    var player1points = document.getElementById("WonderwomanPoints");
+    player1points.innerHTML = Number(player1.points);
+
+    var player2points = document.getElementById("WondermanPoints");
+    player2points.innerHTML = Number(player2.points);
+
 })
