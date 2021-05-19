@@ -39,10 +39,15 @@ export class Board {
   }
 
   removeArm(armToBeRemoved) {
-    this.arms = this.arms.filter((arm) => arm.name !== armToBeRemoved.name);
+    // If name of arm in the list is not equal to name of arm to be removed, then keep the arm, else remove it
+    this.arms = this.arms.filter((arm) => {
+      return arm.name !== armToBeRemoved.name;
+    });
   }
 
   getArm(row, column) {
-    return this.arms.find((arm) => arm.row === row && arm.column === column);
+    return this.arms.find((arm) => {
+      return arm.row === row && arm.column === column;
+    });
   }
 }

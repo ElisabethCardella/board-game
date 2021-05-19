@@ -106,18 +106,19 @@ export class Player {
     }
   }
 
-  hurt(damage) {
+  hurt() {
+    let damage = this.otherPlayer.arm.damage;
     if (this.isDefending) {
-      this.arm.damage = this.arm.damage / 2;
+      damage = damage / 2;
     }
-    this.points = this.points - this.arm.damage;
+    this.points = this.points - damage;
 
     var playerPoints = document.getElementById(this.name + "Points");
     playerPoints.innerHTML = this.points;
   }
 
   beginTurn() {
-    this.tryToAttack();
+    this.otherPlayer.tryToAttack();
 
     // boucle pour mettre en classe cliquable les 3 avant et après de la player //
     // boucle pour aller en haut //
